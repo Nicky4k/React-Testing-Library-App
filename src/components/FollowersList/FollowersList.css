@@ -1,0 +1,40 @@
+.followerslist-container {
+  background-color: white;
+  margin-top: 4rem;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.329);
+  height: 60vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.follower__item {
+  display: flex;
+  height: 4.5rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(234, 239, 237);
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.follower__Details {
+  height: 4rem;
+}
+
+.follower__item img {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+}
+
+.name__box {
+  display: flex;
+}
+
+.name__box h4 {
+  margin: 0;
+}

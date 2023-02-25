@@ -1,0 +1,11 @@
+.banner {
+  height: 32vh;
+  padding: 1rem 2rem;
+  background-image: url("../../assets/images/mountain.jpg");
+  background-position: center;
+}
+
+.banner-img {
+  height: 100%;
+  width: 100%;
+}
