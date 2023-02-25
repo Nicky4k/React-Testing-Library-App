@@ -14,3 +14,10 @@ it("renders by Role", () => {
   const headerTitle = screen.getByRole("heading");
   expect(headerTitle).toBeInTheDocument();
 });
+
+it("renders not present in document", () => {
+  render(<Header title="TODO" />);
+
+  const headerTitle = screen.queryByText(/followers/i);
+  expect(headerTitle).not.toBeInTheDocument();
+});
