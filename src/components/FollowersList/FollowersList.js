@@ -20,6 +20,7 @@ export default function FollowersList() {
       <div>
         {followers.map((follower, index) => (
           <div
+            key={index}
             className="follower__item"
             data-testid={`follower-item-${index}`}
           >

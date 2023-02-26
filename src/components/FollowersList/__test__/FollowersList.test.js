@@ -1,9 +1,8 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import FollowersList from "../FollowersList";
-import axios from "axios";
 
-const MockedFollowersList = () => {
+const MockFollowersList = () => {
   return (
     <BrowserRouter>
       <FollowersList />
@@ -11,6 +10,22 @@ const MockedFollowersList = () => {
   );
 };
 
-test("fetching followers list", () => {
-  render(<MockedFollowersList />);
+describe("FollowersList", () => {
+  beforeEach(() => {
+    jest.mock("../../../__mocks__/axios");
+  });
+
+  it("should fetch and render input element", async () => {
+    render(<MockFollowersList />);
+    const followerDivElement = await screen.findByTestId(`follower-item-0`);
+    // screen.debug();
+    expect(followerDivElement).toBeInTheDocument();
+  });
+
+  test("all fetch working", async () => {
+    render(<MockFollowersList />);
+
+    const followerDivElements = await screen.findByRole("img");
+    expect(followerDivElements).toBeInTheDocument();
+  });
 });
